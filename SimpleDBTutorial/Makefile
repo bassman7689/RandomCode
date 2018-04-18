@@ -1,7 +1,7 @@
-CC=gcc-7
+CC=g++-7
 
 all: simpledb.c
-	$(CC) simpledb.c -o simpledb -Wall -Wextra -pedantic -std=c99
+	$(CC) simpledb.c -o simpledb
 
 .PHONY: clean
 
