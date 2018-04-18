@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++   -std=c++11 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/OpenGLTut.dir/main.cpp.o  -o OpenGLTut -framework OpenGL -framework OpenGL /usr/local/lib/libGLEW.dylib /usr/local/lib/libglfw.3.2.dylib /opt/local/lib/libSOIL.dylib 

@@ -1,0 +1,161 @@
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+#include <vector>
+#include <GL/glew.h>
+#include <glm/vec3.hpp>
+#include <glm/vec2.hpp>
+
+class Model{
+public:
+    Model() {};
+    ~Model() {};
+
+    void addVertex(glm::vec3 vertex) { _vertices.push_back(vertex); }
+    void addUv(glm::vec2 uv) { _uvs.push_back(uv); }
+    void addNormal(glm::vec3 normal) { _normals.push_back(normal); }
+
+    std::vector<glm::vec3> getVertices() { return _vertices; }
+    std::vector<glm::vec2> getUvs() { return _uvs; }
+    std::vector<glm::vec3> getNormals() { return _normals; }
+private:
+    std::vector<glm::vec3> _vertices;
+    std::vector<glm::vec2> _uvs; 
+    std::vector<glm::vec3> _normals;
+};
+
+class ObjLoader{
+public:
+    static Model *Load(std::string filename);
+    static Model *Load(std::vector<std::string>& fileContents);
+private:
+    static void splitOnSpace(std::string s, std::vector<std::string> &result);
+};
+
+Model *ObjLoader::Load(std::string filename)
+{
+    std::ifstream file(filename);
+    
+    std::string line;
+    std::vector<std::string> fileContents;
+    while(getline(file, line))
+    {
+        fileContents.push_back(line);
+    }
+
+    file.close();
+
+    Model *result = new Model();
+    std::vector<glm::vec3> tempVertices;
+    std::vector<glm::vec2> tempUvs; 
+    std::vector<glm::vec3> tempNormals;
+
+    std::vector<int> vertexIndices;
+    std::vector<int> uvIndices;
+    std::vector<int> normalIndices;
+
+    for(const std::string& line: fileContents)
+    {
+        std::vector<std::string> splitLine;
+        ObjLoader::splitOnSpace(line, splitLine);
+
+        if(splitLine[0].compare("v") == 0)
+        {
+            glm::vec3 vertex;
+            vertex.x = std::stof(splitLine[1]);
+            vertex.y = std::stof(splitLine[2]);
+            vertex.z = std::stof(splitLine[3]);
+
+            tempVertices.push_back(vertex);
+        }
+        else if(splitLine[0].compare("vt") == 0)
+        {
+            glm::vec2 uv;
+            uv.x = std::stof(splitLine[1]);
+            uv.y = std::stof(splitLine[2]);
+            tempUvs.push_back(uv);
+        }
+        else if(splitLine[0].compare("vn") == 0)
+        {
+            glm::vec3 normal;
+            normal.x = std::stof(splitLine[1]);
+            normal.y = std::stof(splitLine[2]);
+            normal.z = std::stof(splitLine[3]);
+            tempNormals.push_back(normal);
+        }
+        else if(splitLine[0].compare("f") == 0)
+        {
+            unsigned int vertexIndex[3], uvIndex[3], normalIndex[3];
+            int matches = sscanf(splitLine[1].c_str(), "%d/%d/%d", &vertexIndex[0], &uvIndex[0], &normalIndex[0]);
+            matches += sscanf(splitLine[2].c_str(), "%d/%d/%d", &vertexIndex[1], &uvIndex[1], &normalIndex[1]);
+            matches += sscanf(splitLine[3].c_str(), "%d/%d/%d", &vertexIndex[2], &uvIndex[2], &normalIndex[2]);
+
+            for(size_t i = 0; i < 3; i++)
+            {
+                vertexIndices.push_back(vertexIndex[i]);
+                uvIndices.push_back(uvIndex[i]);
+                normalIndices.push_back(normalIndex[i]);
+            }
+        }
+        else
+        {
+            continue;
+        }
+    } 
+
+    for(size_t i = 0; i < vertexIndices.size(); i++)
+    {
+        unsigned int vertexIdx = vertexIndices[i];
+        glm::vec3 vertex = tempVertices[vertexIdx - 1];
+        result->addVertex(vertex);
+    }
+
+    for(size_t i = 0; i < uvIndices.size(); i++)
+    {
+        unsigned int uvIdx = uvIndices[i];
+        glm::vec2 uv = tempUvs[uvIdx - 1];
+        result->addUv(uv);
+    }
+
+    for(size_t i = 0; i < normalIndices.size(); i++)
+    {
+        unsigned int normalIdx = normalIndices[i];
+        glm::vec3 normal = tempNormals[normalIdx - 1];
+        result->addNormal(normal);
+    }
+
+    return result;
+}
+
+void ObjLoader::splitOnSpace(std::string s, std::vector<std::string> &result)
+{
+    std::istringstream iss(s);
+
+    for(std::string s; iss >> s; )
+        result.push_back(s);
+}
+
+int main(int argc, char **argv)
+{
+    std::string test = "v 1.0f 3.3f 4.f 1.0f";
+    Model *testModel = ObjLoader::Load("testfile.obj");
+    std::vector<glm::vec3> vertices = testModel->getVertices();
+    std::vector<glm::vec2> uvs = testModel->getUvs();
+    std::vector<glm::vec3> normals = testModel->getNormals();
+
+    for(size_t i = 0; i < vertices.size(); i++)
+    {
+        std::cout << "vertices[" << i << "] = (" << vertices[i].x << ", " << vertices[i].y << ", " << vertices[i].z << ")" << std::endl;
+    }
+
+    for(size_t i = 0; i < uvs.size(); i++)
+    {
+        std::cout << "uvs[" << i << "] = (" << uvs[i].x << ", " << uvs[i].y << ")" << std::endl;
+    }
+
+    for(size_t i = 0; i < normals.size(); i++)
+    {
+        std::cout << "normals[" << i << "] = (" << normals[i].x << ", " << normals[i].y << ", " << normals[i].z << ")" << std::endl;
+    }
+}

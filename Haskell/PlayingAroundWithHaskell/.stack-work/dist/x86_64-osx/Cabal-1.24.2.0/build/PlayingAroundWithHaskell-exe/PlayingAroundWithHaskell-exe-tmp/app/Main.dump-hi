@@ -1,0 +1,329 @@
+
+==================== FINAL INTERFACE ====================
+2018-02-08 17:00:31.348842 UTC
+
+interface main@main:Main 8002
+  interface hash: 19658b2944a5061b96950a54e94beb67
+  ABI hash: 90b884306bedc06464c1a711c18c7bdd
+  export-list hash: 2598c65c12a886b3823977b2673ec701
+  orphan hash: a8d246763aff3f3c387654d0ffb7902d
+  flag hash: 15b8a93290c34df31d2e951837bc8331
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.banana
+  Main.canReachIn3
+  Main.foo
+  Main.in3
+  Main.justH
+  Main.landLeft
+  Main.landRight
+  Main.main
+  Main.moveKnight
+  Main.routine
+  Main.wopwop
+  Main.Birds
+  Main.KnightPos
+  Main.Pole
+module dependencies:
+package dependencies: PlayingAroundWithHaskell-0.1.0.0@PlayingAroundWithHaskell-0.1.0.0-16NA7BbmlSKB8DFQKd1Zpr
+                      base-4.9.1.0* ghc-prim-0.5.0.0 integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  PlayingAroundWithHaskell-0.1.0.0@PlayingAroundWithHaskell-0.1.0.0-16NA7BbmlSKB8DFQKd1Zpr:Lib 5141c8050c1d1b56ff65ad5933fd1755
+import  -/  base-4.9.1.0:Control.Monad a6784c5dab0d75c63dabec5a37843f98
+import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  base-4.9.1.0:System.IO c9de64c5f5407c4cf1c52500c4d15200
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+c18eb449332f2c546c408a870a5174b5
+  $s$fEq(,) :: GHC.Classes.Eq (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Types.Int, GHC.Types.Int)
+                  (GHC.Classes.$fEq(,)_$c==
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fEqInt
+                     GHC.Classes.$fEqInt)
+                  (GHC.Classes.$fEq(,)_$c/=
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fEqInt
+                     GHC.Classes.$fEqInt) -}
+d6831ef04cb9301b090dfae6f7bb7ec7
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Main.$trModule2 Main.$trModule1) -}
+847d9fc3b8e6f0b424199f36b4999bb2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Main"#) -}
+24ef6042833e75ffd7aa98b83ecca98d
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+13270624bbb14f8012261ada98e5445e
+  $win3 :: GHC.Types.Int -> GHC.Types.Int -> [Main.KnightPos]
+  {- Arity: 2, Strictness: <L,U(U)><L,U(U)>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Types.Int) (ww1 :: GHC.Types.Int) ->
+                 Main.in3_go (Main.$wmoveKnight ww ww1)) -}
+5f698ce1696b8a4c3952182c13b9c5f7
+  $wlandLeft ::
+    GHC.Prim.Int#
+    -> GHC.Prim.Int# -> GHC.Prim.Int# -> GHC.Base.Maybe Main.Pole
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,U><S,U><S,U>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: GHC.Prim.Int#)
+                   (ww2 :: GHC.Prim.Int#) ->
+                 let {
+                   x :: GHC.Prim.Int# = GHC.Prim.-# (GHC.Prim.+# ww1 ww) ww2
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# x 0#) of wild1 {
+                   GHC.Types.False
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.<# (GHC.Prim.negateInt# x) 4#) of wild {
+                        GHC.Types.False -> GHC.Base.Nothing @ Main.Pole
+                        GHC.Types.True
+                        -> GHC.Base.Just
+                             @ (Main.Birds, Main.Birds)
+                             (GHC.Types.I# (GHC.Prim.+# ww1 ww), GHC.Types.I# ww2) }
+                   GHC.Types.True
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.<# x 4#) of wild {
+                        GHC.Types.False -> GHC.Base.Nothing @ Main.Pole
+                        GHC.Types.True
+                        -> GHC.Base.Just
+                             @ (Main.Birds, Main.Birds)
+                             (GHC.Types.I# (GHC.Prim.+# ww1 ww), GHC.Types.I# ww2) } }) -}
+ade465c78f70e7760fb5461be28d52d4
+  $wlandRight ::
+    GHC.Prim.Int#
+    -> GHC.Prim.Int# -> GHC.Prim.Int# -> GHC.Base.Maybe Main.Pole
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,U><S,U><S,U>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: GHC.Prim.Int#)
+                   (ww2 :: GHC.Prim.Int#) ->
+                 let {
+                   x :: GHC.Prim.Int# = GHC.Prim.-# ww1 (GHC.Prim.+# ww2 ww)
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# x 0#) of wild1 {
+                   GHC.Types.False
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.<# (GHC.Prim.negateInt# x) 4#) of wild {
+                        GHC.Types.False -> GHC.Base.Nothing @ Main.Pole
+                        GHC.Types.True
+                        -> GHC.Base.Just
+                             @ (Main.Birds, Main.Birds)
+                             (GHC.Types.I# ww1, GHC.Types.I# (GHC.Prim.+# ww2 ww)) }
+                   GHC.Types.True
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.<# x 4#) of wild {
+                        GHC.Types.False -> GHC.Base.Nothing @ Main.Pole
+                        GHC.Types.True
+                        -> GHC.Base.Just
+                             @ (Main.Birds, Main.Birds)
+                             (GHC.Types.I# ww1, GHC.Types.I# (GHC.Prim.+# ww2 ww)) } }) -}
+1cbd48fc5de79b5b7845531774d2aa0a
+  $wmoveKnight :: GHC.Types.Int -> GHC.Types.Int -> [Main.KnightPos]
+  {- Arity: 2, Strictness: <L,U(U)><L,U(U)>, Inline: [0] -}
+dedf5ee384eee04774e8de83657c152d
+  type Birds = GHC.Types.Int
+1ba89b756f1a85600a4b0ca984598eb6
+  type KnightPos = (GHC.Types.Int, GHC.Types.Int)
+3717107957df0980725734367f8cd787
+  type Pole = (Main.Birds, Main.Birds)
+266a68857dd7dae3bd4f0c283c8b65e5
+  banana :: Main.Pole -> GHC.Base.Maybe Main.Pole
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ (ds :: Main.Pole) -> GHC.Base.Nothing @ Main.Pole) -}
+853a82cd701fcb49ba57ed0de8924427
+  canReachIn3 :: Main.KnightPos -> Main.KnightPos -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <S,1*U(U(U),U(U))><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (start :: Main.KnightPos) (end :: Main.KnightPos) ->
+                 GHC.List.elem
+                   @ Main.KnightPos
+                   Main.$s$fEq(,)
+                   end
+                   (Main.in3 start)) -}
+b0946d685b78d2bbfc9d3f233fc58231
+  foo :: GHC.Base.Maybe GHC.Base.String
+  {- Strictness: m2,
+     Unfolding: (GHC.Base.Just @ [GHC.Types.Char] Main.foo1) -}
+b1f397928f279926778bd466b220c8b6
+  foo1 :: [GHC.Types.Char]
+  {- Unfolding: (case GHC.Show.$w$cshowsPrec1
+                        0#
+                        Main.foo3
+                        (GHC.Types.[] @ GHC.Types.Char) of ww2 { (#,#) ww3 ww4 ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   (GHC.Types.: @ GHC.Types.Char ww3 ww4)
+                   Main.foo2 }) -}
+fbf88de492d9350bb4c46dcb2360e281
+  foo2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "!"#) -}
+2066b5502cd53148af1f5846e0c2d80b
+  foo3 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (3) -}
+26a35671e58bf73e9fb59be49d24cb1a
+  in3 :: Main.KnightPos -> [Main.KnightPos]
+  {- Arity: 1, Strictness: <S,1*U(U(U),U(U))>, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Main.KnightPos) ->
+                 case w of ww { (,) ww1 ww2 -> Main.$win3 ww1 ww2 }) -}
+514f980b744b2c3eafc56b05ade55460
+  in3_go :: [Main.KnightPos] -> [Main.KnightPos]
+  {- Arity: 1, Strictness: <S,1*U> -}
+ff90c1971e2d8361308fe1690620c8ad
+  justH :: GHC.Base.Maybe GHC.Types.Char
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Base.Just @ GHC.Types.Char Main.justH1) -}
+ff30fbed1e2a05ea0bbee3d8d0dcbbda
+  justH1 :: GHC.Types.Char
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.C# 'h'#) -}
+20e9b145c1c686d899ff1095c51a50f6
+  landLeft :: Main.Birds -> Main.Pole -> GHC.Base.Maybe Main.Pole
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S),1*U(U)><S(S(S)S(S)),1*U(1*U(U),1*U(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Main.Birds) (w1 :: Main.Pole) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { (,) ww3 ww4 ->
+                 case ww3 of ww5 { GHC.Types.I# ww6 ->
+                 case ww4 of ww7 { GHC.Types.I# ww8 ->
+                 Main.$wlandLeft ww1 ww6 ww8 } } } }) -}
+4e4e72d9bf1f19d1ec9a12b581c69201
+  landRight :: Main.Birds -> Main.Pole -> GHC.Base.Maybe Main.Pole
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S),1*U(U)><S(S(S)S(S)),1*U(1*U(U),1*U(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Main.Birds) (w1 :: Main.Pole) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { (,) ww3 ww4 ->
+                 case ww3 of ww5 { GHC.Types.I# ww6 ->
+                 case ww4 of ww7 { GHC.Types.I# ww8 ->
+                 Main.$wlandRight ww1 ww6 ww8 } } } }) -}
+278ce8ead4f34238bf83266331e9ca94
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+a3b2019aa7a35a711a0b44a77f309d53
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        Main.main9
+                        GHC.Types.True
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   Main.main2
+                   GHC.Types.True
+                   ipv }) -}
+b3a54ef15b6d6cd7fbe6dc3ccbddd70e
+  main10 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Unfolding: ((Main.main5, Main.main11)) -}
+d3aec7d50fb5f55addf7ac98bab3a784
+  main11 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 1#) -}
+3379eb93b5f3756109ea6b8b4ee64791
+  main12 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+cbcc532c4bec7dfdce335196b387cf4c
+  main2 :: GHC.Base.String
+  {- Unfolding: (case GHC.List.elem
+                        @ Main.KnightPos
+                        Main.$s$fEq(,)
+                        Main.main6
+                        Main.main3 of wild {
+                   GHC.Types.False -> GHC.Show.shows18
+                   GHC.Types.True -> GHC.Show.shows17 }) -}
+5ea8c00c7c162b772397be6cb898a16d
+  main3 :: [Main.KnightPos]
+  {- Unfolding: (Main.in3_go
+                   (Main.$wmoveKnight Main.main5 Main.main4)) -}
+3b63309cd76c47bbff1b3e920bb870ef
+  main4 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 2#) -}
+6fad328166d70e7c556c565b35985341
+  main5 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 6#) -}
+b9fb63362b9e38130f596c897c7c2b24
+  main6 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Unfolding: ((Main.main8, Main.main7)) -}
+0024a348734e455ac9f2e005a847d2a4
+  main7 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 3#) -}
+1677843a8b130ee22744c138c8e81076
+  main8 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 7#) -}
+ef3d1fab45ab697b3bc9a5f64657ffa7
+  main9 :: GHC.Base.String
+  {- Unfolding: (case GHC.List.elem
+                        @ Main.KnightPos
+                        Main.$s$fEq(,)
+                        Main.main10
+                        Main.main3 of wild {
+                   GHC.Types.False -> GHC.Show.shows18
+                   GHC.Types.True -> GHC.Show.shows17 }) -}
+d3e1048792e8a22bfada090457c0cc9c
+  moveKnight :: Main.KnightPos -> [Main.KnightPos]
+  {- Arity: 1, Strictness: <S,1*U(U(U),U(U))>, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Main.KnightPos) ->
+                 case w of ww { (,) ww1 ww2 -> Main.$wmoveKnight ww1 ww2 }) -}
+63a7bc9092731bc5aba16a5cda0ea9cb
+  routine :: GHC.Base.Maybe Main.Pole
+  {- HasNoCafRefs,
+     Unfolding: InlineRule (0, True, True)
+                (GHC.Base.Nothing @ Main.Pole) -}
+0f272c9cbf0ee2e314d5e53bb2d0d40b
+  wopwop :: GHC.Base.Maybe GHC.Types.Char
+  {- HasNoCafRefs,
+     Unfolding: InlineRule (0, True, True)
+                (GHC.Base.Nothing @ GHC.Types.Char) -}
+"SPEC/Main $fEq(,) @ Int @ Int" [ALWAYS] forall ($dEq1 :: GHC.Classes.Eq
+                                                            GHC.Types.Int)
+                                                ($dEq :: GHC.Classes.Eq GHC.Types.Int)
+  GHC.Classes.$fEq(,) @ GHC.Types.Int @ GHC.Types.Int $dEq $dEq1
+  = Main.$s$fEq(,)
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

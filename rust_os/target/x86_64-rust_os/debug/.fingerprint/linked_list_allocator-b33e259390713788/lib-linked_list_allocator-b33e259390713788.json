@@ -1,0 +1,1 @@
+{"rustc":7384339165576939781,"features":"[\"default\", \"spin\", \"use_spin\"]","target":5174609369661420613,"profile":2479238963835404001,"path":12423070922536878426,"deps":[["spin v0.4.7",4307879251284975675]],"local":[{"Precalculated":"0.5.0"}],"rustflags":["--sysroot","/home/sean/.xargo"],"epoch":"Epoch2015"}

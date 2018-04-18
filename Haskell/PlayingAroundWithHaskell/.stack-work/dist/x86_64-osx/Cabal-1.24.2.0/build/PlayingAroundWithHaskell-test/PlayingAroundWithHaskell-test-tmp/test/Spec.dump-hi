@@ -1,0 +1,194 @@
+
+==================== FINAL INTERFACE ====================
+2017-11-27 22:02:43.632107 UTC
+
+interface main@main:Main 8002
+  interface hash: f35c3d106f8c884305688b18ea5ea0ee
+  ABI hash: d2c7e48d47c2f28f4a9f9fff9af47baa
+  export-list hash: 16db54e6c22bef27bfbe98e2a4e74296
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: aadb022e5077df04288ee10ee5e2bd80
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.main
+module dependencies:
+package dependencies: HUnit-1.5.0.0@HUnit-1.5.0.0-DvjF79OHhCC7SzfeEty4OI
+                      PlayingAroundWithHaskell-0.1.0.0@PlayingAroundWithHaskell-0.1.0.0-16NA7BbmlSKB8DFQKd1Zpr
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.1.0*
+                      call-stack-0.1.0@call-stack-0.1.0-FYVrCPXGP9EGAuTW32963O
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+import  -/  HUnit-1.5.0.0@HUnit-1.5.0.0-DvjF79OHhCC7SzfeEty4OI:Test.HUnit 430ab81af3668b12bae4950025858f90
+import  -/  HUnit-1.5.0.0@HUnit-1.5.0.0-DvjF79OHhCC7SzfeEty4OI:Test.HUnit.Base cd997e8ff65c19ac22867304478c3a62
+import  -/  HUnit-1.5.0.0@HUnit-1.5.0.0-DvjF79OHhCC7SzfeEty4OI:Test.HUnit.Lang 9ab538688b5ed60ffdede50aabf29dd6
+import  -/  HUnit-1.5.0.0@HUnit-1.5.0.0-DvjF79OHhCC7SzfeEty4OI:Test.HUnit.Text dae9d5556dfb2f57d4dfe82107af90ee
+import  -/  PlayingAroundWithHaskell-0.1.0.0@PlayingAroundWithHaskell-0.1.0.0-16NA7BbmlSKB8DFQKd1Zpr:Lib 4a5fd3e132b2da5ebb827029db00deed
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+d6831ef04cb9301b090dfae6f7bb7ec7
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Main.$trModule2 Main.$trModule1) -}
+847d9fc3b8e6f0b424199f36b4999bb2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Main"#) -}
+24ef6042833e75ffd7aa98b83ecca98d
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+21430df5aeb2525e52e6f66b32e22f0a
+  main :: GHC.Types.IO Test.HUnit.Base.Counts
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1
+                  `cast`
+                (Sym (GHC.Types.N:IO[0] <Test.HUnit.Base.Counts>_R)) -}
+d338a7a87645c8060e7849ade9295794
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Test.HUnit.Base.Counts #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case Test.HUnit.Text.runTestTT3 of ww { Test.HUnit.Text.PutText ww1 ww2 ->
+                 case Test.HUnit.Text.$wrunTestText
+                        @ GHC.Types.Int
+                        ww1
+                        ww2
+                        Main.main2
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of wild { (,) counts' ds ->
+                 case ds of wild1 { GHC.Types.I# ds2 ->
+                 case ds2 of ds3 {
+                   DEFAULT
+                   -> GHC.IO.failIO1
+                        @ Test.HUnit.Base.Counts
+                        Test.HUnit.Text.runTestTT2
+                        ipv
+                   0# -> (# ipv, counts' #) } } } } }) -}
+6c8d6927f8c61c47a4ad8023c3b6d035
+  main10 :: Test.HUnit.Lang.Assertion
+  {- Unfolding: (Main.main12 Main.main11 Main.main7 Main.main7) -}
+1a98a5989ec081aaee7c9c0b1f17a102
+  main11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "1 equals 1"#) -}
+9979d647179c99792c7d9ee5693f1c88
+  main12 ::
+    GHC.Base.String
+    -> GHC.Integer.Type.Integer
+    -> GHC.Integer.Type.Integer
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ GHC.Integer.Type.Integer
+                   Main.main13
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Integer.Type.$fEqInteger
+                   GHC.Show.$fShowInteger) -}
+8686196ebac4ef7d35387185c9dfafff
+  main13 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.main21
+                   Main.main14
+                   GHC.Stack.Types.EmptyCallStack) -}
+257fcb55715122fc9e475480b80c3925
+  main14 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.main20
+                   Main.main19
+                   Main.main18
+                   Main.main17
+                   Main.main16
+                   Main.main17
+                   Main.main15) -}
+5988f4f36bc7950fd39e7ec48b266561
+  main15 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 55#) -}
+be38a54912b39b24199542e5e6f1c627
+  main16 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 27#) -}
+2ba76119458efe52d402eded6619718d
+  main17 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 12#) -}
+630f779afa11d935909b1d5abe36aff5
+  main18 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test/Spec.hs"#) -}
+52db5a3d3efa5e028abe71b70d93887f
+  main19 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Main"#) -}
+ba4f77dafb0424c6ffb90da26d5b78d7
+  main2 :: Test.HUnit.Base.Test
+  {- Unfolding: (Test.HUnit.Base.TestList Main.main3) -}
+0ee348176d67436eb2c2586d16d4a272
+  main20 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "main"#) -}
+b850b3cdc75e68339b137563dde1fa7c
+  main21 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "assertEqual"#) -}
+0c05c91fca469aaa15d99d5a2b4fbc27
+  main22 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "assert 1 equals 1"#) -}
+5f8a9111bb1a1828d8330a82aacc433c
+  main23 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Test.HUnit.Base.Counts #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ Test.HUnit.Base.Counts
+                   Main.main1
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <Test.HUnit.Base.Counts>_R))) -}
+4c3ae75dc7e8f9d5ccc8d3145d478ae4
+  main3 :: [Test.HUnit.Base.Test]
+  {- Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Main.main8
+                   Main.main4) -}
+a950208e3ac342e9ac27707339165c03
+  main4 :: [Test.HUnit.Base.Test]
+  {- Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Main.main5
+                   (GHC.Types.[] @ Test.HUnit.Base.Test)) -}
+b98cd8b5d2008922d6b7221fd132a6de
+  main5 :: Test.HUnit.Base.Test
+  {- Unfolding: (Test.HUnit.Base.TestList Main.main6) -}
+8889d247628b5af69ef139d829c9b085
+  main6 :: [Test.HUnit.Base.Test]
+  {- Unfolding: (Main.main_go Main.main7) -}
+0ededbc132a95b63de1f75d70d1e04c6
+  main7 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (1) -}
+a15cef1fa2a5bcc9246f3caaa374641a
+  main8 :: Test.HUnit.Base.Test
+  {- Unfolding: (Test.HUnit.Base.TestLabel Main.main22 Main.main9) -}
+b87496d137bef5f1f24f19ba70fed04b
+  main9 :: Test.HUnit.Base.Test
+  {- Unfolding: (Test.HUnit.Base.TestCase Main.main10) -}
+54dd5bf44a01fd34607a3863c89c9dd9
+  main_go :: GHC.Integer.Type.Integer -> [Test.HUnit.Base.Test]
+  {- Arity: 1, Strictness: <S,U> -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

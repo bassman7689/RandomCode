@@ -1,0 +1,1 @@
+{"rustc":7384339165576939781,"features":"[]","target":2864794915600599742,"profile":2479238963835404001,"path":15036944748900609639,"deps":[["bit_field v0.7.0",16153898704607285109]],"local":[{"Precalculated":"0.1.2"}],"rustflags":["--sysroot","/home/sean/.xargo"],"epoch":"Epoch2015"}

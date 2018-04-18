@@ -1,0 +1,6 @@
+[package]
+name = "smart_pointer_examples"
+version = "0.1.0"
+authors = ["Sean Rodman <ser@amazon.com>"]
+
+[dependencies]

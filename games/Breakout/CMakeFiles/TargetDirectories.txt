@@ -1,0 +1,3 @@
+/Users/ser/code/games/Breakout/CMakeFiles/rebuild_cache.dir
+/Users/ser/code/games/Breakout/CMakeFiles/edit_cache.dir
+/Users/ser/code/games/Breakout/CMakeFiles/Breakout.dir

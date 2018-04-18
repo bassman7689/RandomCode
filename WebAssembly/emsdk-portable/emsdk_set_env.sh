@@ -1,0 +1,5 @@
+export PATH="/Users/ser/code/WebAssembly/emsdk-portable:/Users/ser/code/WebAssembly/emsdk-portable/clang/e1.37.22_64bit:/Users/ser/code/WebAssembly/emsdk-portable/node/4.1.1_64bit/bin:/Users/ser/code/WebAssembly/emsdk-portable/emscripten/1.37.22:/Users/ser/xiki-project/bin:/Users/ser/bin:/Users/ser/perl5/bin:/usr/local/opt/python/libexec/bin:/Users/ser/Library/Python/3.6/bin/:/apollo/env/SDETools/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS"
+export EMSDK="/Users/ser/code/WebAssembly/emsdk-portable"
+export EM_CONFIG="/Users/ser/.emscripten"
+export BINARYEN_ROOT="/Users/ser/code/WebAssembly/emsdk-portable/clang/e1.37.22_64bit/binaryen"
+export EMSCRIPTEN="/Users/ser/code/WebAssembly/emsdk-portable/emscripten/1.37.22"

@@ -1,0 +1,224 @@
+
+==================== FINAL INTERFACE ====================
+2018-02-08 15:58:30.230457 UTC
+
+interface PlayingAroundWithHaskell-0.1.0.0-16NA7BbmlSKB8DFQKd1Zpr:Lib 8002
+  interface hash: 814bb51547115039c5d4c8947d6cd412
+  ABI hash: 5141c8050c1d1b56ff65ad5933fd1755
+  export-list hash: d993b7ef25af6d5110509046da9efb1b
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: f6624f22fcdd76ed0ac6625466e2d712
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Lib.greeting
+  Lib.myFmap
+  Lib.pop
+  Lib.push
+  Lib.size
+  Lib.top
+  Lib.Stack{Lib.Empty Lib.MkStack}
+module dependencies:
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  base-4.9.1.0:System.IO c9de64c5f5407c4cf1c52500c4d15200
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+8bfcec56099c73e0061f43ce81ad6807
+  $fShowStack :: GHC.Show.Show a => GHC.Show.Show (Lib.Stack a)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dShow :: GHC.Show.Show a).
+                  @ (Lib.Stack a)
+                  (Lib.$fShowStack_$cshowsPrec @ a $dShow)
+                  (Lib.$fShowStack_$cshow @ a $dShow)
+                  (Lib.$fShowStack_$cshowList @ a $dShow) -}
+3c122d8a3dcfb74d4a32b7d88f738a70
+  $fShowStack1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+8bfcec56099c73e0061f43ce81ad6807
+  $fShowStack_$cshow ::
+    GHC.Show.Show a => Lib.Stack a -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U(C(C1(U)),A,A)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a ($dShow :: GHC.Show.Show a) (x :: Lib.Stack a) ->
+                 Lib.$fShowStack_$cshowsPrec
+                   @ a
+                   $dShow
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+8bfcec56099c73e0061f43ce81ad6807
+  $fShowStack_$cshowList ::
+    GHC.Show.Show a => [Lib.Stack a] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dShow :: GHC.Show.Show a)
+                   (eta :: [Lib.Stack a])
+                   (eta1 :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ (Lib.Stack a)
+                   (Lib.$fShowStack_$cshowsPrec @ a $dShow Lib.$fShowStack1)
+                   eta
+                   eta1) -}
+8bfcec56099c73e0061f43ce81ad6807
+  $fShowStack_$cshowsPrec ::
+    GHC.Show.Show a => GHC.Types.Int -> Lib.Stack a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><L,1*U(U)><S,1*U> -}
+fd81fc32c3701eaf25f7ad30f327bbc2
+  $tc'Empty :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16580561871113447495##
+                   9767521916569853366##
+                   Lib.$trModule
+                   Lib.$tc'Empty1) -}
+f17f2bc343d78c62db04e90d97bd1bb1
+  $tc'Empty1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Empty"#) -}
+3faca5016f59c545ec0d6bacaded30f9
+  $tc'MkStack :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4959367261087932665##
+                   10292387846234691530##
+                   Lib.$trModule
+                   Lib.$tc'MkStack1) -}
+c12cf67bf859384760e0fc592b2b1005
+  $tc'MkStack1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'MkStack"#) -}
+ee70200d495d531cc7a2f85d33a8184d
+  $tcStack :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8246436945118869306##
+                   14992221263198537852##
+                   Lib.$trModule
+                   Lib.$tcStack1) -}
+bcebd3ebabb201dfc1861ab1cb4e184d
+  $tcStack1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Stack"#) -}
+f92c6650f57201f278753d75a27244fe
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Lib.$trModule2 Lib.$trModule1) -}
+c1e130510f2a71fdadddf409d8d3abe3
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Lib"#) -}
+8eb546e376c2f241b7f36f8c32f1f3b2
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "PlayingAroundWithHaskell-0.1.0.0-16NA7BbmlSKB8DFQKd1Zpr"#) -}
+dfdd15ccd44ebb110a4ac429124bf7f1
+  $wpoly_size' :: GHC.Prim.Int# -> Lib.Stack a -> GHC.Prim.Int#
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>, Inline: [0] -}
+8bfcec56099c73e0061f43ce81ad6807
+  data Stack a = Empty | MkStack a (Lib.Stack a)
+84dbcbd4914662a06c0295af8603e62c
+  greeting :: [GHC.Types.Char] -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,1*U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib.greeting1
+                  `cast`
+                (<[GHC.Types.Char]>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+4daa9924ef201face578014655c23c29
+  greeting1 ::
+    [GHC.Types.Char]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,1*U><S,U>,
+     Unfolding: (\ (name :: [GHC.Types.Char])
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   (GHC.CString.unpackAppendCString#
+                      "Hello "#
+                      (GHC.Base.++ @ GHC.Types.Char name Lib.greeting2))
+                   GHC.Types.True
+                   eta) -}
+7f2230daca94b7036a4867f8587c598f
+  greeting2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "!"#) -}
+c4a6d95adae035b639661b67fac5352e
+  myFmap :: GHC.Base.Monad m => (t -> b) -> m t -> m b
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(A,1*C1(C1(U)),A,C(U),A)><L,C(U)><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ (m :: * -> *)
+                   @ b
+                   @ t
+                   ($dMonad :: GHC.Base.Monad m)
+                   (f :: t -> b)
+                   (action :: m t) ->
+                 GHC.Base.>>=
+                   @ m
+                   $dMonad
+                   @ t
+                   @ b
+                   action
+                   (\ (result :: t) -> GHC.Base.return @ m $dMonad @ b (f result))) -}
+34158ddffd5d09b296f3251ffc7e3446
+  pop :: Lib.Stack a -> (a, Lib.Stack a)
+  {- Arity: 1, Strictness: <S,1*U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (ds :: Lib.Stack a) ->
+                 case ds of wild {
+                   Lib.Empty -> Lib.pop1 @ a Lib.MkStack x s -> (x, s) }) -}
+4765d82729f6fa027cb3bfaa9e82e781
+  pop1 :: (a, Lib.Stack a)
+  {- Strictness: x -}
+70aff15a27099996711c8f3a59e84e51
+  push :: a -> Lib.Stack a -> Lib.Stack a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m2,
+     Unfolding: InlineRule (0, True, True) Lib.MkStack -}
+1cc1ede8777d293e988399f62fbeff0f
+  size :: Lib.Stack a -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (s :: Lib.Stack a) -> Lib.size1 @ a Lib.$fShowStack1 s) -}
+e9c4cf180ed45fb5023e5c56b8cdc7c1
+  size1 :: GHC.Types.Int -> Lib.Stack a -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><S,1*U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a (w :: GHC.Types.Int) (w1 :: Lib.Stack a) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case Lib.$wpoly_size' @ a ww1 w1 of ww2 { DEFAULT ->
+                 GHC.Types.I# ww2 } }) -}
+81ecea6295492e106db5bc49cb1fa7bc
+  top :: Lib.Stack a -> a
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (ds :: Lib.Stack a) ->
+                 case ds of wild {
+                   Lib.Empty -> Lib.top1 @ a Lib.MkStack x s -> x }) -}
+bd5a63d857e8f03553033ee979a3a6e8
+  top1 :: a
+  {- Strictness: x -}
+instance [safe] GHC.Show.Show [Lib.Stack] = Lib.$fShowStack
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
