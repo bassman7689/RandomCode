@@ -60,6 +60,9 @@ void Window::init()
         fprintf(stderr, "Failed to initialize GLEW!");
         exit(1);
     }
+
+    // Disable VSync
+    glfwSwapInterval(0);
 }
 
 void Window::clear()
