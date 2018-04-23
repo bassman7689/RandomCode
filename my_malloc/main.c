@@ -17,7 +17,7 @@ typedef struct header header_t;
 
 void *global_base = NULL;
 
-struct header_t *find_free_block(header_t **last, size_t size) {
+header_t *find_free_block(header_t **last, size_t size) {
     header_t *current = global_base;
     while (current && !(current->free && current->size >= size)) {
         *last = current;
@@ -86,7 +86,6 @@ void my_free(void *ptr) {
 
     header_t* header_ptr = get_header_pointer(ptr);
     assert(header_ptr->free == 0);
-    printf("header_ptr->magic = %0x%08x\n", header_ptr->magic);
     assert(header_ptr->magic == 0x77777777 || header_ptr->magic == 0x12345678);
     header_ptr->free = 1;
     header_ptr->magic = 0x55555555;
@@ -94,7 +93,7 @@ void my_free(void *ptr) {
 
 void *my_realloc(void *ptr, size_t size) {
     if (!ptr) {
-        return malloc(size);
+        return my_malloc(size);
     }
 
     header_t *header_ptr = get_header_pointer(ptr);
@@ -103,7 +102,7 @@ void *my_realloc(void *ptr, size_t size) {
     }
 
     void *new_ptr;
-    new_ptr = malloc(size);
+    new_ptr = my_malloc(size);
     if (!new_ptr) {
         return NULL;
     }
@@ -113,16 +112,15 @@ void *my_realloc(void *ptr, size_t size) {
 }
 
 int main(int argc, char* argv[]) {
-    int *p = my_malloc(sizeof(int));
-    *p = 1;
+    int *test[100000];
+    for (int i = 0; i < 5000; i++) {
+        for (int j = 0; i < 100000; i++) {
+            test[i] = my_malloc(sizeof(int));
+            *test[i] = i;
+        }
 
-    printf("*p = %d\n",*p);
-    p = my_realloc(p, sizeof(int) * 2);
-    p[1] = 2;
-
-    for (int i = 0; i < 2; i++) {
-        printf("p[%d] = %d\n", i, p[i]);
+        for (int j = 0; i < 100000; i++) {
+            my_free(test[i]);
+        }
     }
-
-    my_free(p);
 }
