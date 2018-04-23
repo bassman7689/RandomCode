@@ -5,7 +5,6 @@
 
 #include "Graphics.h"
 
-#define CALCULATE_FPS // has to be defined before including debug to work
 #include "Debug.h"
 
 #define WIDTH 1024
