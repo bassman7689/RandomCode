@@ -1,6 +1,5 @@
-#include <GLFW/glfw3.h>
-
 #ifdef CALCULATE_FPS
+#include <GLFW/glfw3.h>
 
 #define CALCULATE_FPS_IF_REQUIRED() \
     calculate_and_display_fps()
