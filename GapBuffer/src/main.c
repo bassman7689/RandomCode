@@ -3,97 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Gap Buffer
-
-typedef struct gap_buffer_t {
-    char* buffer;
-    unsigned int gap_start;
-    unsigned int gap_end;
-    unsigned int size;
-} gap_buffer;
-
-gap_buffer* new_gap_buffer(unsigned int size) {
-    gap_buffer* gb = malloc(sizeof(gap_buffer));
-    gb->buffer = malloc(sizeof(char) * size);
-    gb->gap_start = 0;
-    gb->gap_end = size;
-    gb->size = size;
-    return gb;
-}
-
-void gap_buffer_grow(gap_buffer *gb) {
-    unsigned int new_size = gb->size * 2;
-
-    char * new_buffer = malloc(sizeof(char) * new_size);
-    memmove(new_buffer, gb->buffer, gb->gap_start);
-
-    unsigned int new_gap_end = new_size - (gb->size - gb->gap_end);
-    memmove(new_buffer + new_gap_end, gb->buffer + gb->gap_end, gb->size - gb->gap_end);
-
-    free(gb->buffer);
-
-    gb->buffer = new_buffer;
-    gb->gap_end = new_gap_end;
-    gb->size = gb->size * 2;
-}
-
-void gap_buffer_move_gap(gap_buffer *gb, unsigned int position) {
-    if (position < gb->gap_start) {
-        unsigned int gap_delta = gb->gap_start - position;
-
-        gb->gap_start -= gap_delta;
-        gb->gap_end -= gap_delta;
-
-        memmove(gb->buffer + gb->gap_end, gb->buffer + gb->gap_start, gap_delta);
-    } else if (position > gb->gap_start) {
-        unsigned int gap_delta = position - gb->gap_start;
-
-        memmove(gb->buffer + gb->gap_start, gb->buffer + gb->gap_end, gap_delta);
-
-        gb->gap_start += gap_delta;
-        gb->gap_end += gap_delta;
-    }
-}
-
-void gap_buffer_insert_character_at_position(gap_buffer* gb, char character, unsigned int position) {
-    gap_buffer_move_gap(gb, position);
-
-    gb->buffer[gb->gap_start] = character;
-    gb->gap_start++;
-
-    if (gb->gap_start == gb->gap_end) {
-        gap_buffer_grow(gb);
-    }
-}
-
-void gap_buffer_delete_back(gap_buffer* gb, unsigned int position) {
-    gap_buffer_move_gap(gb, position);
-    gb->gap_start--;
-}
-
-void gap_buffer_delete_forward(gap_buffer* gb, unsigned int position) {
-    gap_buffer_move_gap(gb, position);
-    gb->gap_end++;
-}
-
-
-void gap_buffer_debug_print(gap_buffer *gb) {
-    unsigned int i;
-
-    for(i = 0; i < gb->gap_start; i++) {
-        printf("%c", gb->buffer[i]);
-    }
-
-    for (i = gb->gap_start; i < gb->gap_end; i++) {
-        printf("-");
-    }
-
-    for (i = gb->gap_end; i < gb->size; i++) {
-        printf("%c", gb->buffer[i]);
-    }
-
-    printf("\n");
-}
+#include "gap_buffer.h"
 
 // character functions
 
@@ -146,10 +56,18 @@ int format_string_size(char *format, ...) {
 char *message  = "hello, world!";
 
 int main(int argc, char** argv) {
+    gap_buffer *buffer = new_gap_buffer(2);
+    for (char c = 'A'; c <= 'Z'; c++) {
+        gap_buffer_insert_character_at_position(buffer, c, 0);
+        gap_buffer_insert_character_at_position(buffer, to_lower(c), 1);
+        gap_buffer_debug_print(buffer);
+    }
+
     int size = format_string_size("%s", message); 
     char *test_string = malloc(sizeof(char) * size + 1);
     strncat(test_string, message, size);
     to_upper_string(test_string);
     printf("Test: %s\n", test_string);
     free(test_string);
+    free_gap_buffer(buffer);
 }

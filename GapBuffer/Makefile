@@ -3,8 +3,8 @@ CFLAGS=
 LDFLAGS=-lncurses -macosx_version_min 10.12 -lc -arch x86_64
 BUILDDIR=./build
 SOURCEDIR=./src
-OBJS=${BUILDDIR}/main.o
-SRCS=${SOURCEDIR}/main.c
+OBJS=${BUILDDIR}/main.o ${BUILDDIR}/gap_buffer.o
+SRCS=${SOURCEDIR}/main.c ${SOURCEDIR}/gap_buffer.c
 APPNAME=gap_buffer_test
 
 all: ${BUILDDIR} ${OBJS}
